@@ -1,0 +1,10 @@
+.HomePage-container {
+  color: #ccbcac;
+  position:absolute;
+  top: 50%;
+  left: 43%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
