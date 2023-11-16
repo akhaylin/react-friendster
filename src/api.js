@@ -74,6 +74,7 @@ class FriendsterApi {
 
    /**Takes username and calls API to get the rest of the user data */
    static async getUserInfo(username) {
+    console.log("IN GETUSERINFO IN API", username)
     let res = await this.request(`users/${username}`);
     return res.user;
   }

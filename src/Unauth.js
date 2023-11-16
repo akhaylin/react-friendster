@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import userContext from '../context/userContext';
+import userContext from './context/userContext';
 
 /**
  * Unauthorized renders text to show user if user is on page they dont have access to

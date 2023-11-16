@@ -1,5 +1,5 @@
 import './HomePage.css';
-import userContext from '../context/userContext';
+import userContext from './context/userContext';
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -28,8 +28,8 @@ function HomePage() {
 
   return (
     <div className='HomePage-container '>
-      <h1 className='shadow-sm'>Jobly</h1>
-      <p>All the jobs in one, convenient place.</p>
+      <h1 className='shadow-sm'>Friendster</h1>
+      <p>Loner? Look no further.</p>
       {toDisplay}
     </div>
 

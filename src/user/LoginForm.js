@@ -1,4 +1,4 @@
-import userContext from "../src/context/userContext";
+import userContext from "../context/userContext";
 import { BrowserRouter, Navigate, useNavigate } from 'react-router-dom';
 import { useState } from "react";
 import Alert from "../Alert";
@@ -39,9 +39,10 @@ function LoginForm({ login }) {
   return (
     <div className="mx-auto mt-3" style={{ width: '400px' }}>
       <form onSubmit={handleLogin}>
+        <h1>Log In</h1>
 
         <div className="form-group">
-          <label htmlFor="username" className="text-white">Username</label>
+          <label htmlFor="username" >Username</label>
           <input className="form-control"
             name="username"
             value={formData.username}
@@ -51,7 +52,7 @@ function LoginForm({ login }) {
         </div>
 
         <div className="form-group">
-          <label htmlFor="password" className="text-white">Password</label>
+          <label htmlFor="password" >Password</label>
           <input type="password"
             className="form-control"
             name="password"

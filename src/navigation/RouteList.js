@@ -1,11 +1,8 @@
 import React, { useContext, useState }from "react";
 import { Route, Routes, Navigate } from 'react-router-dom';
 import HomePage from "../HomePage";
-import CompaniesPage from "../companies/CompaniesPage";
-import CompanyDetail from "../companies/CompanyDetail";
-import JobsPage from "../jobs/JobsPage";
+import ProspectPage from "../prospects/ProspectPage";
 import LoginForm from "../user/LoginForm"
-import ProfilePage from "../user/ProfilePage"
 import SignupForm from "../user/SignupForm"
 import userContext from "../context/userContext";
 
@@ -21,10 +18,8 @@ function RouteList({signup, login, update}) {
   const routesLoggedIn =
    (
       <>
-        <Route element={<CompaniesPage />} path="/companies" />
-        <Route element={<CompanyDetail />} path="/companies/:handle" />
-        <Route element={<JobsPage />} path="/jobs" />
-        <Route element={<ProfilePage handleSubmit={update}/>} path="/profile" />
+        {/* <Route element={<MatchesPage />} path="/matches" /> */}
+        <Route element={<ProspectPage />} path="/prospects" />
       </>
     )
 

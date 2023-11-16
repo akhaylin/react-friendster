@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
 import JoblyApi from "../api";
-import SearchBar from "../SearchBar";
-import JobsList from "./JobsList";
+import JobsList from "./ProspectList";
 import Loading from '../Loading';
 
 /**
@@ -33,7 +32,6 @@ function JobsPage() {
 
   return(
     <div>
-      <SearchBar handleSubmit={fetchJobs} />
       {jobs.length === 0
       ? noJobHtml
       :<JobsList jobs={jobs}/>}

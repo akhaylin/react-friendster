@@ -15,13 +15,10 @@ function Nav({ logout }) {
     return (
       <ul className="navbar-nav me-auto mb-2 mb-lg-0 ">
         <li className="nav-item nav-link">
-          <Link className="nav-link" aria-current="page" to={`/companies`}>Companies</Link>
+          <Link className="nav-link" aria-current="page" to={`/matches`}>Matches</Link>
         </li>
         <li className="nav-item nav-link">
-          <Link className="nav-link" aria-current="page" to={`/jobs`}>Jobs</Link>
-        </li>
-        <li className="nav-item nav-link">
-          <Link className="nav-link" aria-current="page" to={`/profile`}>Profile</Link>
+          <Link className="nav-link" aria-current="page" to={`/prospects`}>Start Matching</Link>
         </li>
         <li className="nav-item nav-link">
           <Link onClick={logout} className="nav-link" aria-current="page" to={`/`}>Logout: {username}</Link>
@@ -47,7 +44,7 @@ function Nav({ logout }) {
   return (
     <nav className="navbar navbar-expand-lg " style={{backgroundColor: "#ccbcac"}}>
       <div className="container-fluid">
-        <Link className="navbar-brand" to={`/`}>Jobly</Link>
+        <Link className="navbar-brand" to={`/`}>Friendster</Link>
         <div id="navbarSupportedContent">
           {username ? navUserLoggedIn() : navUserLoggedOut()}
         </div>

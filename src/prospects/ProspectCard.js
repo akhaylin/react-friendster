@@ -1,5 +1,5 @@
 import React from 'react';
-import { addCommasToIntegerPart } from '../helpers';
+
 
 /**
  *  Renders one card with info about a job
@@ -24,7 +24,7 @@ function JobCard({ title, companyHandle, salary, equity }) {
       <div className="card-body">
         <p><strong>{title}</strong> <br /> {companyHandle}</p>
         <p className="card-text">
-          Salary:{addCommasToIntegerPart(salary)}  <br /> Equity: {equity}
+          Salary:{salary}  <br /> Equity: {equity}
         </p>
       </div>
     </div>
