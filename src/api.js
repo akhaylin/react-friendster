@@ -51,6 +51,25 @@ class FriendsterApi {
     return await resp.json();
   }
 
+  static async signupReq(endpoint, data, method) {
+    const url = new URL(`${BASE_URL}/${endpoint}`);
+    const headers = {
+      authorization: `Bearer ${this.token}`,
+    };
+
+    let body = new FormData();
+    // Assuming 'data' is an object with key-value pairs
+    for (let key in data) {
+        body.append(key, data[key]);
+    }
+
+    console.log("TYPEOFDATA", typeof body)
+    const resp = await fetch(url,{method, body, headers } )
+    return await resp.json()
+  }
+
+
+
   // Individual API routes
 
   /** Get users Macthes. */
@@ -85,7 +104,9 @@ class FriendsterApi {
    * response
    */
   static async signup(userData) {
-    let res = await this.request('auth/register', userData, "POST");
+    console.log("IN SIGNUP METHOD ", userData)
+    // let res = await this.request('auth/register', userData, "POST");
+    let res = await this.signupReq('auth/register', userData, "POST");
     return res;
   }
 

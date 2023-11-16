@@ -50,16 +50,23 @@ function SignupForm({ signup }) {
     //   formDataObj.key(key, formData[key])
     // })
 
+    // for (const key in formData){
+    //   if( key !== "image"){
+    //     formDataObj[key] = formData[key]
+    //   }
+
+    // }
     for (const key in formData){
-      if( key !== "image"){
+      if( key === "image" && formData[key]){
+        formDataObj[key] = formData[key]
+      } else if (key !== "image") {
         formDataObj[key] = formData[key]
       }
-
     }
 
     try {
       console.log("RegFORMDATA", formData)
-      console.log("FORMDATA", formDataObj)
+      console.log("FORMDATA TYPE IN SIGNUP", typeof formDataObj)
       await signup(formDataObj);
       setFormData(initialState);
       navigate("/");
@@ -70,7 +77,7 @@ function SignupForm({ signup }) {
 
   return (
     <div className="mx-auto mt-3" style={{ width: '400px' }}>
-      <form onSubmit={handleSignup} enctype="multipart/form-data" >
+      <form onSubmit={handleSignup} encType="multipart/form-data" >
         <h1>Sign Up</h1>
 
         <div className="form-group">

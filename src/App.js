@@ -42,6 +42,7 @@ function App() {
 
   /**Function to be called in signup form to call API and register user */
   async function signup(formData) {
+    console.log("IN SIGNUP IN APP", formData)
     let res = await FriendsterApi.signup(formData);
     setToken(res.token);
   }
