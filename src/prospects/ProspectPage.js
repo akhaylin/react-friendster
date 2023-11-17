@@ -1,42 +1,41 @@
-import React, { useEffect } from 'react';
-import { useState } from 'react';
-import JoblyApi from "../api";
-import JobsList from "./ProspectList";
+import React, { useEffect, useState } from 'react';
+import ProspectList from "./ProspectList";
 import Loading from '../Loading';
+import FriendsterApi from '../api';
 
 /**
- *  Renders JobsPage
+ *  Renders ProspectPage
  *
- *  State: jobs - {jobs:[job, ...], isLoading: boolean}
- *         where job is an object containing info about one job
+ *  State:
+ * - prospects: array like [ {prospect1}, {prospect2}, ... ]
  *
- *  RouteList => JobsPage => {SearchBar/JobsList}
+ *  RouteList => ProspectPage => ProspectList
  */
-function JobsPage() {
-    const [jobs,setJobs] = useState(null);
+function ProspectPage() {
+    const [prospects, setProspects] = useState(null);
 
-  useEffect(function getJobs() {
-      fetchJobs();
+  useEffect(function getProspects() {
+      fetchProspects();
   },[]);
 
-  /**Fetch all Jobs from API and set the result as state */
-  async function fetchJobs(title) {
-    const jobs = await JoblyApi.getJobs(title)
+  /**Fetch list of Prospects from API and set the result as state */
+  async function fetchProspects() {
+    const prospects = await FriendsterApi.getWithinRadius();
 
-    setJobs(jobs);
+    setProspects(prospects);
   }
 
-  if (jobs === null) return <Loading />;
+  if (prospects === null) return <Loading />;
 
-  const noJobHtml = <div><h2 className='text-white'>No jobs found!</h2></div>
+  const noProspectsHtml = <div><h2 className='text-white'>No prospective friends found!</h2></div>
 
   return(
     <div>
-      {jobs.length === 0
-      ? noJobHtml
-      :<JobsList jobs={jobs}/>}
+      {prospects.length === 0
+      ? noProspectsHtml
+      :<ProspectList prospects={prospects}/>}
     </div>
   )
 }
 
-export default JobsPage;
+export default ProspectPage;

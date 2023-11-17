@@ -1,27 +1,31 @@
 import React from 'react';
-import JobCard from './ProspectCard'
+import ProspectCard from './ProspectCard'
 /**
- * Renders list of jobs
+ * Renders list of prospects
  *
- * Props: jobs - [job, ...] where job is object containing info about a job
+ * Props:
+ * - prospects: array like [ {prospect1}, {prospect2}, ... ]
  *
- * {CompanyDetails,JobsPage} => JobsList => JobCard
+ * ProspectPage => ProspectList => ProspectCard
  */
-function JobsList({jobs}) {
+function ProspectList({ prospects }) {
 
   return(
     <div className='JobsList flex-column'>
-      {jobs.map(job => (
-        <JobCard
-          key={job.id}
-          title={job.title}
-          companyHandle={job.companyHandle}
-          salary={job.salary}
-          equity={job.equity}
+      {prospects.map(prospect => (
+        <ProspectCard
+          key={prospect.username}
+          username={prospect.username}
+          firstName={prospect.firstName}
+          lastName={prospect.lastName}
+          hobbies={prospect.hobbies}
+          interests={prospect.interests}
+          zipcode={prospect.zipcode}
+          photo={prospect.photo}
         />
       ))}
     </div>
   )
 }
 
-export default JobsList;
+export default ProspectList;
