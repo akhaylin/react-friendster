@@ -69,6 +69,7 @@ function SignupForm({ signup }) {
       console.log("FORMDATA TYPE IN SIGNUP", typeof formDataObj)
       await signup(formDataObj);
       setFormData(initialState);
+      setErrors(null)
       navigate("/");
     } catch (err) {
       setErrors(err);

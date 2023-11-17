@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import userContext from '../context/userContext';
 
 /**
  *  Renders one card with info about a prospect
@@ -15,22 +16,33 @@ function ProspectCard({
   hobbies,
   interests,
   zipcode,
-  photo }) {
+  photo,
+  handlePreference,
+  hasMatched }) {
+  const currusername = useContext(userContext)?.username;
 
   return (
-    <div className="card w-75 mb-3" >
+    <div className="card mt-3" style={{width: '18rem'}} id={username}>
+      <img src={photo} className="card-img-top" alt={`${firstName} ${lastName}`}/>
       <div className="card-body">
-        <img src={photo}/>
-        <h3>{username}</h3>
-        <ul>
-          <li>{firstName} {lastName}</li>
-          <li>{hobbies}</li>
-          <li>{interests}</li>
-          <li>{zipcode}</li>
+        <h5 className="card-title">{firstName} {lastName}</h5>
+        <ul >
+          <li><b>Hobbies:</b> {hobbies}</li>
+          <li><b>interests:</b> {interests}</li>
+          <li><b>Zip Code:</b> {zipcode}</li>
         </ul>
+
+        {hasMatched
+        ?(<p>Messaging available in v2...</p>)
+        :(
+          <>
+            <button className='btn btn-success' onClick={() => handlePreference(currusername, username, true)}>Like</button>
+            <button className='btn btn-danger'onClick={() => handlePreference(currusername, username, false)}>Dislike</button>
+          </>
+        )}
       </div>
     </div>
   );
 }
 
-export default JobCard;
+export default ProspectCard;

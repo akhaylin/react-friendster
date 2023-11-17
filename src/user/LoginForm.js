@@ -30,6 +30,7 @@ function LoginForm({ login }) {
     try {
       await login(formData);
       setFormData({ username: "", password: "" });
+      setErrors(null)
       navigate("/");
     } catch (err) {
       setErrors(err);

@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext }from 'react';
 import ProspectCard from './ProspectCard'
+import userContext from '../context/userContext';
 /**
  * Renders list of prospects
  *
@@ -8,10 +9,11 @@ import ProspectCard from './ProspectCard'
  *
  * ProspectPage => ProspectList => ProspectCard
  */
-function ProspectList({ prospects }) {
-
+function ProspectList({ prospects, handlePreference}) {
+  const friendRadius = useContext(userContext)?.friendRadius;
   return(
-    <div className='JobsList flex-column'>
+    <div className='JobsList flex-column mt-3'>
+      <h2>Potential friends within {friendRadius} miles:</h2>
       {prospects.map(prospect => (
         <ProspectCard
           key={prospect.username}
@@ -22,6 +24,8 @@ function ProspectList({ prospects }) {
           interests={prospect.interests}
           zipcode={prospect.zipcode}
           photo={prospect.photo}
+          handlePreference={handlePreference}
+          hasMatched={false}
         />
       ))}
     </div>

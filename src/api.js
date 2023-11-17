@@ -81,19 +81,19 @@ class FriendsterApi {
 
   /**Like or dislike a user  */
   static async likeOrDislike(likeData) {
+    console.log("IN API LIKE OR DISLIKE", likeData)
     let res = await this.request('matches/preference',{ likeData }, "POST")
     return res.result;
   }
 
   /**Get users by friend radius and like/disliked filter*/
   static async getWithinRadius() {
-    let res = await this.request('/users/search');
+    let res = await this.request('users/search');
     return res.users;
   }
 
    /**Takes username and calls API to get the rest of the user data */
    static async getUserInfo(username) {
-    console.log("IN GETUSERINFO IN API", username)
     let res = await this.request(`users/${username}`);
     return res.user;
   }
@@ -104,7 +104,6 @@ class FriendsterApi {
    * response
    */
   static async signup(userData) {
-    console.log("IN SIGNUP METHOD ", userData)
     // let res = await this.request('auth/register', userData, "POST");
     let res = await this.signupReq('auth/register', userData, "POST");
     return res;

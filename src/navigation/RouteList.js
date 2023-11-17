@@ -5,6 +5,7 @@ import ProspectPage from "../prospects/ProspectPage";
 import LoginForm from "../user/LoginForm"
 import SignupForm from "../user/SignupForm"
 import userContext from "../context/userContext";
+import MatchList from "../matches/MatchesList";
 
 /**
  * Registers routes
@@ -14,12 +15,14 @@ import userContext from "../context/userContext";
  */
 function RouteList({signup, login, update}) {
   const username = useContext(userContext)?.username;
+  console.log("USERNAME IN ROUTE LIST", username)
 
   const routesLoggedIn =
    (
       <>
         {/* <Route element={<MatchesPage />} path="/matches" /> */}
         <Route element={<ProspectPage />} path="/prospects" />
+        <Route element={<MatchList />} path="/matches"/>
       </>
     )
 
