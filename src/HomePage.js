@@ -28,7 +28,7 @@ function HomePage() {
 
   return (
     <div className='HomePage-container '>
-      <h1 className='shadow-sm'>Friendster</h1>
+      <h1 className='shadow-sm'>Friendster.</h1>
       <p>Loner? Look no further.</p>
       {toDisplay}
     </div>

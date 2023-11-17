@@ -66,7 +66,7 @@ function MessageList() {
   if(isLoading) return <p>Loading...</p>
 
   return(
-    <div className='MessageList' style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
+    <div className='MessageList' style={{ display: 'flex', flexDirection: 'column', height: '100vh', backgroundColor:'white' }}>
 
       {/* Scrollable container for messages */}
       <div style={{ overflowY: 'auto', flexGrow: 1 }}>

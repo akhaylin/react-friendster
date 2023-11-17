@@ -37,10 +37,10 @@ function ProspectCard({
         {hasMatched
         ?(<Link to={`/messages/${username}`}><button className='btn btn-primary'>Message</button></Link>)
         :(
-          <>
-            <button className='btn btn-success' onClick={() => handlePreference(currusername, username, true)}>Like</button>
-            <button className='btn btn-danger'onClick={() => handlePreference(currusername, username, false)}>Dislike</button>
-          </>
+          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <button className='btn text-white'style={{background:'linear-gradient(#008000, #2E8B57)',}} onClick={() => handlePreference(currusername, username, true)}>Like</button>
+            <button className='btn text-white' style={{background:'linear-gradient(#B22222, #8B0000)',}}onClick={() => handlePreference(currusername, username, false)}>Dislike</button>
+          </div>
         )}
       </div>
     </div>

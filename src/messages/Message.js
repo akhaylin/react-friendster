@@ -8,13 +8,13 @@ function Message ({username, fromUsername, toUsername, firstName, lastName, body
   const currusername = useContext(userContext)?.username;
 
   const messageStyle = fromUsername === currusername
-  ? {position:'relative',left:0, backgroundColor:'PaleTurquoise'}
-  : {position:'relative',left:500, backgroundColor:'Gainsboro'}
+  ? {position:'relative',left:0, backgroundColor:'PaleTurquoise', }
+  : {position:'relative',left:500, backgroundColor:'Gainsboro', }
 
   const timeAgo = formatDistanceToNow(new Date(sentAt), {addSuffix: true})
 
   return(
-    <div className="card mt-3" style={{width: '25rem', ...messageStyle}}>
+    <div className="card mt-3 m-3" style={{width: '25rem', ...messageStyle}}>
       <div className="card-header">
         From: {fromUsername}
       </div>

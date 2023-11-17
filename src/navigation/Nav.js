@@ -15,13 +15,13 @@ function Nav({ logout }) {
     return (
       <ul className="navbar-nav me-auto mb-2 mb-lg-0 ">
         <li className="nav-item nav-link">
-          <Link className="nav-link" aria-current="page" to={`/matches`}>Matches</Link>
+          <Link className="nav-link" aria-current="page" to={`/matches`}><b style={{fontFamily:'monospace, monaco'}}>Matches</b></Link>
         </li>
         <li className="nav-item nav-link">
-          <Link className="nav-link" aria-current="page" to={`/prospects`}>Start Matching</Link>
+          <Link className="nav-link" aria-current="page" to={`/prospects`}><b style={{fontFamily:'monospace, monaco'}}>Start Matching</b></Link>
         </li>
         <li className="nav-item nav-link">
-          <Link onClick={logout} className="nav-link" aria-current="page" to={`/`}>Logout: {username}</Link>
+          <Link onClick={logout} className="nav-link" aria-current="page" to={`/`}><b style={{fontFamily:'monospace, monaco'}}>Logout: {username}</b></Link>
         </li>
       </ul>
     );
@@ -32,19 +32,19 @@ function Nav({ logout }) {
     return (
       <ul className="navbar-nav me-auto mb-2 mb-lg-0 ">
         <li className="nav-item nav-link">
-          <Link className="nav-link" aria-current="page" to={`/login`}>Login</Link>
+          <Link className="nav-link" aria-current="page" to={`/login`}><b style={{fontFamily:'monospace, monaco'}}>Login</b></Link>
         </li>
         <li className="nav-item nav-link">
-          <Link className="nav-link" aria-current="page" to={`/signup`}>Sign Up</Link>
+          <Link className="nav-link" aria-current="page" to={`/signup`}><b style={{fontFamily:'monospace, monaco'}}>Sign Up</b></Link>
         </li>
       </ul>
     );
   }
 
   return (
-    <nav className="navbar navbar-expand-lg " style={{backgroundColor: "#ccbcac"}}>
+    <nav className="navbar navbar-expand-lg border border-dark rounded-bottom" style={{backgroundColor: "#F5F5F5"}}>
       <div className="container-fluid">
-        <Link className="navbar-brand" to={`/`}>Friendster</Link>
+        <Link className="navbar-brand" to={`/`}><b style={{fontFamily:'monospace, monaco'}}>Friendster.</b></Link>
         <div id="navbarSupportedContent">
           {username ? navUserLoggedIn() : navUserLoggedOut()}
         </div>
