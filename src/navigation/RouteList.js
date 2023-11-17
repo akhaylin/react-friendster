@@ -6,6 +6,7 @@ import LoginForm from "../user/LoginForm"
 import SignupForm from "../user/SignupForm"
 import userContext from "../context/userContext";
 import MatchList from "../matches/MatchesList";
+import MessageList from "../messages/MessageList";
 
 /**
  * Registers routes
@@ -23,6 +24,8 @@ function RouteList({signup, login, update}) {
         {/* <Route element={<MatchesPage />} path="/matches" /> */}
         <Route element={<ProspectPage />} path="/prospects" />
         <Route element={<MatchList />} path="/matches"/>
+        <Route element={<MessageList />} path="/messages/:tousername"/>
+
       </>
     )
 

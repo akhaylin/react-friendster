@@ -115,6 +115,17 @@ class FriendsterApi {
     return res;
   }
 
+  static async getMessages(toUser) {
+    let res = await this.request(`messages/${toUser}`);
+    return res.messages;
+  }
+
+  static async sendMessage(messageData) {
+    console.log("IN API SEDN MSG", messageData)
+    let res = await this.request('messages/send', messageData, "POST");
+    return res.message
+  }
+
 
 }
 

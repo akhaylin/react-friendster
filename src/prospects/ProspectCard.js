@@ -1,5 +1,7 @@
 import React, { useContext } from 'react';
 import userContext from '../context/userContext';
+import { Link } from "react-router-dom";
+
 
 /**
  *  Renders one card with info about a prospect
@@ -33,7 +35,7 @@ function ProspectCard({
         </ul>
 
         {hasMatched
-        ?(<p>Messaging available in v2...</p>)
+        ?(<Link to={`/messages/${username}`}><button className='btn btn-primary'>Message</button></Link>)
         :(
           <>
             <button className='btn btn-success' onClick={() => handlePreference(currusername, username, true)}>Like</button>
