@@ -39,7 +39,7 @@ function MatchList() {
 
   return(
     <div className='JobsList flex-column mt-3'>
-      <h2>You have {matches.length} matches!</h2>
+      <h2>You have {matches.length} {matches.length === 1?'match!':'matches!'}</h2>
       {matches.map(match => (
         <ProspectCard
           key={match.username}

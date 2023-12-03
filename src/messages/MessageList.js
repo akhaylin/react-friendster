@@ -66,7 +66,7 @@ function MessageList() {
   if(isLoading) return <p>Loading...</p>
 
   return(
-    <div className='MessageList' style={{ display: 'flex', flexDirection: 'column', height: '100vh', backgroundColor:'white' }}>
+    <div className='MessageList' style={{ display: 'flex', flexDirection: 'column', height: '100vh', backgroundColor:'#F5F5F5' }}>
 
       {/* Scrollable container for messages */}
       <div style={{ overflowY: 'auto', flexGrow: 1 }}>
@@ -85,7 +85,7 @@ function MessageList() {
       </div>
 
       {/* Fixed position message input box */}
-      <form onSubmit={handleSendMessage} style={{ position: 'sticky', bottom: 0, backgroundColor: 'white', padding: '10px' }}>
+      <form onSubmit={handleSendMessage} className="border border-dark" style={{ position: 'sticky', bottom: 0, backgroundColor: '#F5F5F5', padding: '10px' }}>
         <div className="form-group">
           <label htmlFor="body">Message:</label>
           <textarea

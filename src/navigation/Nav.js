@@ -42,7 +42,7 @@ function Nav({ logout }) {
   }
 
   return (
-    <nav className="navbar navbar-expand-lg border border-dark rounded-bottom" style={{backgroundColor: "#F5F5F5"}}>
+    <nav className="navbar navbar-expand-lg border border-dark rounded-bottom" style={{backgroundColor: "#F5F5F5", position: 'sticky', top: 0, zIndex: 1000}}>
       <div className="container-fluid">
         <Link className="navbar-brand" to={`/`}><b style={{fontFamily:'monospace, monaco'}}>Friendster.</b></Link>
         <div id="navbarSupportedContent">
